@@ -12,6 +12,6 @@ app.use(express.static(path.join(__dirname, 'public')))
 //     res.send('result')
 // })
 
-server.listen(port, () => {
+app.listen(port, () => {
     console.log(`I'm listening to port: ${port}`)
 });
