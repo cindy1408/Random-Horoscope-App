@@ -1,8 +1,8 @@
 const button = document.getElementById('button');
 const result = document.getElementById('result');
 
-import { aries, taurus, gemini, cancer, leo, virgo, libra, scorpio, sagittarius, capricorn, aquarius, pisces } from './quotes.js';
-
+//import { aries, taurus, gemini, cancer, leo, virgo, libra, scorpio, sagittarius, capricorn, aquarius, pisces } from './quotes.js';
+import {userHoroscope} from './quotes.js';
 button.addEventListener('click', ()=> {
     const select = document.getElementById('horoscope').value
     
@@ -13,50 +13,18 @@ button.addEventListener('click', ()=> {
     //console.log(select)
     
     const quote = (select) => {
+        let selected = select.toLowerCase()
+        //console.log(selected)
         
-        if(select === 'Aries'){
-            return randomQuote(aries)
-        } 
-        if(select === 'Taurus'){
-            return randomQuote(taurus)
-        }
-        if(select === 'Gemini'){
-            return randomQuote(gemini)
-        }
-        if(select === 'Cancer'){
-            return randomQuote(cancer)
-        }
-        if(select === 'Gemini'){
-            return randomQuote(gemini)
-        }
-        if(select === 'Leo'){
-            return randomQuote(leo)
-        }
-        if(select === 'Virgo'){
-            return randomQuote(virgo)
-        }
-        if(select === 'Libra'){
-            return randomQuote(libra)
-        }
-        if(select === 'Scorpio'){
-            return randomQuote(scorpio)
-        }
-        if(select === 'Sagittarius'){
-            return randomQuote(sagittarius)
-        }
-        if(select === 'Capricorn'){
-            return randomQuote(capricorn)
-        }
-        if(select === 'Aquarius'){
-            return randomQuote(aquarius)
-        }
+        let userArray = userHoroscope[selected]
+        //console.log(userArray)
         
-        if(select === 'Pisces'){
-            return randomQuote(pisces)
-        }
+        //console.log(Object.keys(userHoroscope[selected]))
         
+        if(selected === selected){
+            return randomQuote(userArray)
+        }
     }
-
     return result.innerHTML = quote(select);
 });
 

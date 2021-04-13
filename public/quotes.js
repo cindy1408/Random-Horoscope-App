@@ -58,7 +58,7 @@ const pisces = ['P.I.S.C.E.S: Pleasant. Insecure. Sensitive. Caring. Empathetic.
 'Pisces feels lonely even in a crowd, especially a wrong one.',
 'Don’t play games with Pisces. They can tell before you even try.'];
 
-export { aries,
+export const userHoroscope = { aries,
         taurus, 
         gemini, 
         cancer, 
