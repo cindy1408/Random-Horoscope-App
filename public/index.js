@@ -1,7 +1,18 @@
 const button = document.getElementById('button');
 const result = document.getElementById('result');
 
-//import { aries, taurus, gemini, cancer, leo, virgo, libra, scorpio, sagittarius, capricorn, aquarius, pisces } from './quotes.js';
+
+//Drop down list 
+const horoscopeArr = ['Aries', 'Taurus', 'Gemini', 'Cancer', 'Leo', 'Virgo', 'Libra',' Scorpio', 'Sagittarius', 'Capricorn', 'Aquarius', 'Pisces'];
+
+let html = []
+    for(let i = 0; i < horoscopeArr.length; i++){
+        html.push('<option>' + horoscopeArr[i] + '</option>')
+    };
+document.getElementById('horoscope').innerHTML = html.join("")
+
+
+
 import {userHoroscope} from './quotes.js';
 button.addEventListener('click', ()=> {
     const select = document.getElementById('horoscope').value
@@ -21,7 +32,9 @@ button.addEventListener('click', ()=> {
         
         //console.log(Object.keys(userHoroscope[selected]))
         
-        if(selected === selected){
+        if(selected === undefined){
+            return 'Please select you sign.'
+        } else {
             return randomQuote(userArray)
         }
     }
