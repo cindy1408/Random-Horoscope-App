@@ -1,7 +1,6 @@
 const button = document.getElementById('button');
 const result = document.getElementById('result');
 
-let dropdown = document.getElementById('horoscope')
 
 //Drop down list 
 const horoscopeArr = ['Aries', 'Taurus', 'Gemini', 'Cancer', 'Leo', 'Virgo', 'Libra',' Scorpio', 'Sagittarius', 'Capricorn', 'Aquarius', 'Pisces'];
