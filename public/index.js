@@ -2,18 +2,24 @@ const button = document.getElementById('button');
 const result = document.getElementById('result');
 
 
-//Drop down list 
-const horoscopeArr = ['Aries', 'Taurus', 'Gemini', 'Cancer', 'Leo', 'Virgo', 'Libra',' Scorpio', 'Sagittarius', 'Capricorn', 'Aquarius', 'Pisces'];
+//const horoscopeArr = ['Aries', 'Taurus', 'Gemini', 'Cancer', 'Leo', 'Virgo', 'Libra',' Scorpio', 'Sagittarius', 'Capricorn', 'Aquarius', 'Pisces'];
 
+
+import {userHoroscope} from './quotes.js';
+
+//Drop down list 
 let html = []
-    for(let i = 0; i < horoscopeArr.length; i++){
-        html.push('<option>' + horoscopeArr[i] + '</option>')
+const signs = Object.keys(userHoroscope);
+console.log(signs);
+
+    for(let i = 0; i < signs.length; i++){
+        html.push('<option>' + signs[i] + '</option>')
     };
 document.getElementById('horoscope').innerHTML = html.join("")
 
 
 
-import {userHoroscope} from './quotes.js';
+
 button.addEventListener('click', ()=> {
     const select = document.getElementById('horoscope').value
     
@@ -24,15 +30,15 @@ button.addEventListener('click', ()=> {
     //console.log(select)
     
     const quote = (select) => {
-        let selected = select.toLowerCase()
+        //let selected = select.toLowerCase()
         //console.log(selected)
         
-        let userArray = userHoroscope[selected]
+        let userArray = userHoroscope[select]
         //console.log(userArray)
         
         //console.log(Object.keys(userHoroscope[selected]))
         
-        if(selected === undefined){
+        if(select === undefined){
             return 'Please select you sign.'
         } else {
             return randomQuote(userArray)
